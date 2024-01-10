@@ -1,10 +1,11 @@
 <script>
 import blueBanner from './blueBanner.vue';
-
+import footerBanner from './footerBanner.vue';
 export default {
-    name: blueBanner,
+    
     components: {
-        blueBanner
+        blueBanner,
+        footerBanner
     }
 }
 </script>
@@ -64,6 +65,7 @@ export default {
                 </div>
             </div>
         </div>
+        <footerBanner />
     </div>
 </template>
 
