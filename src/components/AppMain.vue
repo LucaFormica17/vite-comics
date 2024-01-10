@@ -1,5 +1,9 @@
 <script>
+import card from './card.vue';
 export default {
+    components: {
+        card,
+    },
     data() {
         return {
             comics: [
@@ -93,10 +97,7 @@ export default {
             </button>
             <div class="container">
                 <div class="card-container">
-                    <div class="card" v-for="(comic, index) in comics" :key="index">
-                        <img :src="comic.thumb" alt="comic">
-                        <p>{{comic.series}}</p>
-                    </div>
+                    <card v-for="(comic, index) in comics" :key="index" :comic="comic"/>
                 </div>
                 <div class="btn-container">
                     <button class="center-button">
@@ -157,22 +158,7 @@ export default {
         flex-wrap: wrap;
         padding: 20px 0;
 
-        .card{
-            color: white;
-            margin: 5px;
-            width: calc(100% / 6 - 10px);
-
-            &:hover{
-                opacity: 0.5;
-                cursor: pointer;
-            }
-
-            img{
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-            }
-        }
+        
     }
 
     .btn-container{
