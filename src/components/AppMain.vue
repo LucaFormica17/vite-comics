@@ -83,7 +83,14 @@ export default {
 
 <template lang="">
     <div>
+        <div class="jumbotron">
+            <img src="../assets/img/jumbotron.jpg" alt="jumbo-img">
+            
+        </div>
         <div class="bg-black">
+            <button class="abs-button">
+                <h3>current series</h3>
+            </button>
             <div class="container">
                 <div class="card-container">
                     <div class="card" v-for="(comic, index) in comics" :key="index">
@@ -91,17 +98,58 @@ export default {
                         <p>{{comic.series}}</p>
                     </div>
                 </div>
+                <div class="btn-container">
+                    <button class="center-button">
+                    <h4>load more</h4>
+                </button>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-    @use './styles/partials/variables.scss';
+    @use './styles/partials/variables.scss' as *;
 
+    .jumbotron{
+        width: 100%;
+        height: 300px;
+        
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        
+    }
     .bg-black{
         background-color: black;
+        position: relative;
         
+        button{
+            background-color: $main_color;
+            border: none;
+        }
+        .abs-button{
+            
+            position: absolute;
+            bottom: 97%;
+            left: 20%;
+
+            
+
+            h3{
+                color: white;
+                text-transform: uppercase;
+                font-size: 18px;
+                font-weight: 600;
+                padding: 8px 15px;
+            }
+        }
+            
     }
     
     .card-container{
@@ -123,6 +171,22 @@ export default {
                 width: 100%;
                 height: 200px;
                 object-fit: cover;
+            }
+        }
+    }
+
+    .btn-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .center-button{
+            margin-bottom: 10px;
+
+            h4{
+                color: white;
+                text-transform: uppercase;
+                padding: 5px 50px;
             }
         }
     }
