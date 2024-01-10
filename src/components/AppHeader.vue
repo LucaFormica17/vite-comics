@@ -34,21 +34,24 @@ export default {
     .navbar{
         display: flex;
         justify-content: space-between;
-        padding: 20px 0;
+
+        img{
+            padding: 20px 0;
+        }
 
         ul{
             display: flex;
 
             li{
                 margin: 0 5px;
-                line-height: 100px;
+                line-height: 150px;
+                position: relative;
 
                 a{
                     font-size: 13px;
                     font-weight: 600;
                     text-transform: uppercase;
                     color: black;
-                    position: relative;
                     display: block;
 
                     &.active,
